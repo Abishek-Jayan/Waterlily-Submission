@@ -1,0 +1,38 @@
+{
+  "hash": "5c3023c1",
+  "configHash": "2bc00948",
+  "lockfileHash": "3adaa181",
+  "browserHash": "44be40ba",
+  "optimized": {
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "5a709471",
+      "needsInterop": true
+    },
+    "react-hot-toast": {
+      "src": "../../node_modules/react-hot-toast/dist/index.mjs",
+      "file": "react-hot-toast.js",
+      "fileHash": "f58792b4",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "443739f1",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "358b26df",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "react-Ea1HnpA1": {
+      "file": "react-Ea1HnpA1.js",
+      "isDynamicEntry": false
+    }
+  }
+}

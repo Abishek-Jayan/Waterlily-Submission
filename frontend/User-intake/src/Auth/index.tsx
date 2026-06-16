@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { fetchJSON } from "../api";
 import type { User } from "../App";
+import "./index.css";
 
 type Mode = "login" | "register";
 
@@ -34,32 +35,35 @@ const Auth = ({ onAuthed }: AuthProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>{mode === "login" ? "Log in" : "Register"}</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit" disabled={submitting}>
-        {mode === "login" ? "Log in" : "Register"}
-      </button>
-      <button
-        type="button"
-        onClick={() => setMode(mode === "login" ? "register" : "login")}
-      >
-        {mode === "login" ? "Don't have an account? Register here" : "Already a member? Log in"}
-      </button>
-    </form>
+    <div className="auth-overlay">
+      <form className="auth-modal" onSubmit={handleSubmit}>
+        <h2>{mode === "login" ? "Log in" : "Register"}</h2>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" className="auth-submit" disabled={submitting}>
+          {mode === "login" ? "Log in" : "Register"}
+        </button>
+        <button
+          type="button"
+          className="auth-toggle"
+          onClick={() => setMode(mode === "login" ? "register" : "login")}
+        >
+          {mode === "login" ? "Don't have an account? Register here" : "Already a member? Log in"}
+        </button>
+      </form>
+    </div>
   );
 };
 

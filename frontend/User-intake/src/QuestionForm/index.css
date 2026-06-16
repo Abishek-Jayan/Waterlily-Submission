@@ -1,0 +1,311 @@
+.qform-page {
+  position: fixed;
+  inset: 0;
+  background: #fdf6ec;
+  color: #3a2e25;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  font-family: inherit;
+}
+
+.qform-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(253, 246, 236, 0.95);
+  border-bottom: 1px solid #e8d8c4;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.qform-userinfo {
+  font-size: 15px;
+  color: #3a2e25;
+}
+
+.qform-userinfo strong {
+  color: #d97757;
+}
+
+.qform-logout {
+  padding: 8px 16px;
+  background: transparent;
+  color: #d97757;
+  border: 1px solid #d97757;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.qform-logout:hover {
+  background: rgba(217, 119, 87, 0.1);
+}
+
+.qform-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.qform-card {
+  width: 100%;
+  max-width: 560px;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow:
+    0 12px 40px rgba(193, 110, 65, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.qform-progress-label {
+  font-size: 13px;
+  color: #8b7460;
+  text-align: center;
+}
+
+.qform-progress {
+  height: 6px;
+  background: #f4e4d0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.qform-progress-fill {
+  height: 100%;
+  background: #d97757;
+  transition: width 0.3s ease;
+}
+
+.qform-question-text {
+  font-size: 20px;
+  color: #3a2e25;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.qform-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #e8d8c4;
+  border-radius: 8px;
+  background: #fffaf2;
+  color: #3a2e25;
+  font-family: inherit;
+}
+
+.qform-input::placeholder {
+  color: #b89c83;
+}
+
+.qform-input:focus {
+  outline: none;
+  border-color: #d97757;
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.2);
+}
+
+.qform-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.qform-nav button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.qform-prev {
+  background: #f4e4d0;
+  color: #3a2e25;
+}
+
+.qform-prev:hover:not(:disabled) {
+  background: #ecd6bb;
+}
+
+.qform-prev:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qform-next,
+.qform-submit {
+  background: #d97757;
+  color: white;
+}
+
+.qform-next:hover:not(:disabled),
+.qform-submit:hover:not(:disabled) {
+  background: #c5664a;
+}
+
+.qform-next:disabled,
+.qform-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+select.qform-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23d97757' d='M6 8L0 0h12z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.qform-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qform-radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e8d8c4;
+  border-radius: 8px;
+  background: #fffaf2;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 15px;
+}
+
+.qform-radio:hover {
+  background: #fdf0dc;
+}
+
+.qform-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e8d8c4;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.qform-radio input[type="radio"]:checked {
+  border-color: #d97757;
+}
+
+.qform-radio input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d97757;
+}
+
+.qform-view-responses {
+  background: transparent;
+  color: #d97757;
+  border: 1px solid #d97757;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.qform-view-responses:hover {
+  background: rgba(217, 119, 87, 0.1);
+}
+
+.qform-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 46, 37, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+}
+
+.qform-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow:
+    0 12px 40px rgba(193, 110, 65, 0.18),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  color: #3a2e25;
+}
+
+.qform-modal h2 {
+  margin: 0 0 16px;
+  color: #3a2e25;
+}
+
+.qform-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.qform-modal li {
+  padding: 12px 14px;
+  background: #fdf6ec;
+  border-radius: 8px;
+  border-left: 3px solid #d97757;
+}
+
+.qform-modal li strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #3a2e25;
+}
+
+.qform-modal-close {
+  background: #d97757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.qform-modal-close:hover {
+  background: #c5664a;
+}

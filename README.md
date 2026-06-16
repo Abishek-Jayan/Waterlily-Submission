@@ -22,8 +22,10 @@ Backend (Django)
 
 
 To do
-- UI/UX
--
+- Form validation
+    - Disable next button till input populated
+    - Date of birth should be calendar picker with placeholder being MM/DD/YY
+    - 
 
 Completed
 - Register new user
@@ -40,3 +42,8 @@ Completed
 - Questions and Answers
 - Submit button at the bottom
 - Allow users to edit responses after submitting
+- More questions. Make the questions about collecting, demographic, health and financial information
+- UI/UX
+- Single question display format
+- Navigation between questions
+- Progress indicator
