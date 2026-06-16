@@ -131,9 +131,3 @@ Vite serves on `http://localhost:5173`. Open that URL — you'll land on the aut
 ### Configuration
 
 If you change the Vite port, update `CORS_ALLOWED_ORIGINS` and `CSRF_TRUSTED_ORIGINS` in `backend/myproject/myproject/settings.py` so the new origin is allowed.
-
-## Notes
-
-- Date inputs are stored as ISO `YYYY-MM-DD` strings; the calendar widget's display format depends on the browser locale.
-- The frontend reads the CSRF token from the cookie via `fetchJSON`, so individual fetch calls never need to handle it.
-- Django's password validators are configured in `AUTH_PASSWORD_VALIDATORS` but `create_user` skips them — call `validate_password(password)` in `RegisterView` to enforce them on signup.
