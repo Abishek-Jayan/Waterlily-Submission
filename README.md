@@ -6,20 +6,12 @@ A full-stack intake form for long-term care planning. Users register, log in, wa
 
 **Frontend**
 - React 19 + TypeScript
-- Vite (dev server and build)
-- react-hot-toast (notifications)
-- Plain CSS modules (no UI framework)
 
 **Backend**
-- Python 3 + Django 6
-- Django REST Framework (API layer)
-- django-cors-headers (cross-origin requests)
-- SQLite (default dev DB)
+- Python 3 + Django REST Framework (Chosen over Node.js due to familiarity, built in db configuration and time constraints)
 
 **Auth**
 - Session cookies via Django's session middleware
-- CSRF tokens on every state-changing request
-- DRF `SessionAuthentication` enforced globally; `AllowAny` only on register/login/me/csrf
 
 ## Implemented features
 
@@ -29,31 +21,6 @@ A full-stack intake form for long-term care planning. Users register, log in, wa
 - `/me/` endpoint the frontend hits on mount to know whether to show the form or the auth modal.
 - CSRF cookie bootstrapped on first load, automatically sent with every mutating request.
 
-### Survey form
-- 15-question intake covering demographics, health, family history, and finances.
-- **Carousel UI**: one question on screen at a time, with Previous and Next buttons.
-- **Progress bar** showing "Question N of 15".
-- **Typed inputs per question**:
-  - Date of birth → calendar picker, capped at the current year.
-  - State → dropdown of all 50 US states (browser enforces "must be in list").
-  - Marital status → Single / Married dropdown.
-  - Yes/No questions → custom-styled radio buttons.
-  - Income, savings, retirement age → number input, must be a positive integer.
-- **Per-question validation**: Next and Submit buttons stay disabled until the current input is valid.
-- **Prefill on return**: prior answers are loaded back into the form so users can edit instead of starting over.
-- **Resubmit support**: upsert via the composite uniqueness constraint, so re-submitting updates answers in place rather than stacking duplicate rows.
-
-### Reviewing responses
-- After at least one submission, a "View Submitted Responses" button appears.
-- Opens a modal listing every stored answer joined to its original question text.
-- Click-outside-to-close on the backdrop.
-
-### UI/UX
-- Warm light theme: cream background, white cards, burnt-orange accents.
-- Box-shadowed modal cards (auth, success, and responses review).
-- Hyperlink-style toggle between login and register.
-- Toast notifications for success, network failures, and submit errors.
-- Sticky top bar showing "Logged in as <username>" and a logout button.
 
 ## Architecture
 
@@ -98,7 +65,7 @@ All endpoints live under `/api/`.
 ### Prerequisites
 - Python 3.11+ (3.12 recommended)
 - Node.js 18+
-- npm (ships with Node)
+- npm
 
 ### Backend
 
